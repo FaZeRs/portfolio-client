@@ -1,19 +1,36 @@
 <script setup lang="ts">
 import { isDark } from '~/composables'
+import avatar from '~/assets/images/avatar.png'
+import bgHero from '~/assets/images/bg-hero.jpg'
+import iconWebDevelopmentWhite from '~/assets/images/icon-web-development-white.svg'
+import iconWebDevelopmentBlack from '~/assets/images/icon-web-development-black.svg'
+import iconAppDevelopmentWhite from '~/assets/images/icon-app-development-white.svg'
+import iconAppDevelopmentBlack from '~/assets/images/icon-app-development-black.svg'
+import iconServerWhite from '~/assets/images/icon-server-white.svg'
+import iconServerBlack from '~/assets/images/icon-server-black.svg'
+import iconSeoWhite from '~/assets/images/icon-seo-white.svg'
+import iconSeoBlack from '~/assets/images/icon-seo-black.svg'
+import iconMobileWhite from '~/assets/images/icon-mobile-white.svg'
+import iconMobileBlack from '~/assets/images/icon-mobile-black.svg'
+import iconEmailWhite from '~/assets/images/icon-email-white.svg'
+import iconEmailBlack from '~/assets/images/icon-email-black.svg'
+
+const githubUrl = import.meta.env.VITE_GITHUB_URL
+const facebookUrl = import.meta.env.VITE_FACEBOOK_URL
+const twitterUrl = import.meta.env.VITE_TWITTER_URL
+const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL
 </script>
 
 <template>
   <div>
     <div
       class="relative bg-cover bg-center bg-no-repeat py-8"
-      style="
-        background-image: url(https://atom.redpixelthemes.com/assets/img/bg-hero.jpg);
-      "
+      :style="`background-image: url(${bgHero});`"
     >
       <div
         bg-gradient="to-r from-indigo-800 to-indigo-900"
         class="absolute inset-0 z-20 bg-cover bg-center bg-no-repeat opacity-90"
-      ></div>
+      />
 
       <div
         class="container relative z-30 pt-20 pb-12 lg:pt-34 lg:pb-34 mx-auto"
@@ -21,10 +38,10 @@ import { isDark } from '~/composables'
         <div class="flex flex-col items-center justify-center lg:flex-row">
           <div class="rounded-full border-8 border-indigo-700 shadow-xl">
             <img
-              src="https://atom.redpixelthemes.com/assets/img/blog-author.jpg"
+              :src="avatar"
               class="h-48 rounded-full sm:h-56"
-              alt="author"
-            />
+              alt="Nauris Linde"
+            >
           </div>
           <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
             <h1
@@ -61,7 +78,7 @@ import { isDark } from '~/composables'
                   Let's connect
                 </p>
                 <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-3xl text-yellow"></i>
+                  <i class="bx bx-chevron-right text-3xl text-yellow" />
                 </div>
               </div>
               <div
@@ -75,16 +92,16 @@ import { isDark } from '~/composables'
                   text-white text-2xl
                 "
               >
-                <a href="/" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="githubUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
                   <div i="carbon-logo-github" />
                 </a>
-                <a href="/" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="facebookUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
                   <div i="carbon-logo-facebook" />
                 </a>
-                <a href="/" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="twitterUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
                   <div i="carbon-logo-twitter" />
                 </a>
-                <a href="/" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="linkedinUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
                   <div i="carbon-logo-linkedin" />
                 </a>
               </div>
@@ -93,7 +110,7 @@ import { isDark } from '~/composables'
         </div>
       </div>
     </div>
-    <div class="bg-gray-50 dark:bg-gray-800 dark:text-white" id="about">
+    <div id="about" class="bg-gray-50 dark:bg-gray-800 dark:text-white">
       <div
         class="
           container
@@ -133,18 +150,12 @@ import { isDark } from '~/composables'
             I'm Nauris Linde, a Backend Developer
           </h4>
           <p class="pt-6 font-body leading-relaxed text-slate-600 dark:text-slate-300">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Currently I'm working as C++ Developer at Giraffe360. I have been programming for 7 years.
           </p>
         </div>
       </div>
     </div>
-    <div class="container py-16 md:py-20 mx-auto dark:text-white text-primary px-8" id="services">
+    <div id="services" class="container py-16 md:py-20 mx-auto dark:text-white text-primary px-8">
       <h2
         class="
           text-center
@@ -187,23 +198,23 @@ import { isDark } from '~/composables'
           <div v-if="isDark" class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-development-white.svg"
-                alt="development icon"
-              />
+                :src="iconWebDevelopmentWhite"
+                alt="Web Development"
+              >
             </div>
           </div>
           <div v-else class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-development-white.svg"
-                alt="development icon"
-              />
+                :src="iconWebDevelopmentWhite"
+                alt="Web Development"
+              >
             </div>
             <div class="block group-hover:hidden">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-development-black.svg"
-                alt="development icon"
-              />
+                :src="iconWebDevelopmentBlack"
+                alt="Web Development"
+              >
             </div>
           </div>
           <div class="text-center">
@@ -213,12 +224,13 @@ import { isDark } from '~/composables'
                 text-lg
                 font-semibold
                 text-indigo-700
+                dark:text-indigo-500
                 uppercase
                 group-hover:text-yellow
                 lg:text-xl
               "
             >
-              WEB DEVELOPMENT
+              Web Development
             </h3>
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
@@ -231,23 +243,23 @@ import { isDark } from '~/composables'
           <div v-if="isDark" class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-content-white.svg"
-                alt="content marketing icon"
-              />
+                :src="iconAppDevelopmentWhite"
+                alt="Application Development"
+              >
             </div>
           </div>
           <div v-else class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-content-white.svg"
-                alt="content marketing icon"
-              />
+                :src="iconAppDevelopmentWhite"
+                alt="Application Development"
+              >
             </div>
             <div class="block group-hover:hidden">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-content-black.svg"
-                alt="content marketing icon"
-              />
+                :src="iconAppDevelopmentBlack"
+                alt="Application Development"
+              >
             </div>
           </div>
           <div class="text-center">
@@ -257,12 +269,13 @@ import { isDark } from '~/composables'
                 text-lg
                 font-semibold
                 text-indigo-700
+                dark:text-indigo-500
                 uppercase
                 group-hover:text-yellow
                 lg:text-xl
               "
             >
-              Technical Writing
+              Application Development
             </h3>
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
@@ -275,23 +288,23 @@ import { isDark } from '~/composables'
           <div v-if="isDark" class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-mobile-white.svg"
-                alt="Mobile Application icon"
-              />
+                :src="iconMobileWhite"
+                alt="Mobile Development"
+              >
             </div>
           </div>
           <div v-else class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-mobile-white.svg"
-                alt="Mobile Application icon"
-              />
+                :src="iconMobileWhite"
+                alt="Mobile Development"
+              >
             </div>
             <div class="block group-hover:hidden">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-mobile-black.svg"
-                alt="Mobile Application icon"
-              />
+                :src="iconMobileBlack"
+                alt="Mobile Development"
+              >
             </div>
           </div>
           <div class="text-center">
@@ -301,6 +314,7 @@ import { isDark } from '~/composables'
                 text-lg
                 font-semibold
                 text-indigo-700
+                dark:text-indigo-500
                 uppercase
                 group-hover:text-yellow
                 lg:text-xl
@@ -319,23 +333,23 @@ import { isDark } from '~/composables'
           <div v-if="isDark" class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-email-white.svg"
-                alt="Email Marketing icon"
-              />
+                :src="iconEmailWhite"
+                alt="Email Development"
+              >
             </div>
           </div>
           <div v-else class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-email-white.svg"
-                alt="Email Marketing icon"
-              />
+                :src="iconEmailWhite"
+                alt="Email Development"
+              >
             </div>
             <div class="block group-hover:hidden">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-email-black.svg"
-                alt="Email Marketing icon"
-              />
+                :src="iconEmailBlack"
+                alt="Email Development"
+              >
             </div>
           </div>
           <div class="text-center">
@@ -345,6 +359,7 @@ import { isDark } from '~/composables'
                 text-lg
                 font-semibold
                 text-indigo-700
+                dark:text-indigo-500
                 uppercase
                 group-hover:text-yellow
                 lg:text-xl
@@ -363,23 +378,23 @@ import { isDark } from '~/composables'
           <div v-if="isDark" class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-design-white.svg"
-                alt="Theme Design icon"
-              />
+                :src="iconSeoWhite"
+                alt="SEO Optimization"
+              >
             </div>
           </div>
           <div v-else class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-design-white.svg"
-                alt="Theme Design icon"
-              />
+                :src="iconSeoWhite"
+                alt="SEO Optimization"
+              >
             </div>
             <div class="block group-hover:hidden">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-design-black.svg"
-                alt="Theme Design icon"
-              />
+                :src="iconSeoBlack"
+                alt="SEO Optimization"
+              >
             </div>
           </div>
           <div class="text-center">
@@ -389,12 +404,13 @@ import { isDark } from '~/composables'
                 text-lg
                 font-semibold
                 text-indigo-700
+                dark:text-indigo-500
                 uppercase
                 group-hover:text-yellow
                 lg:text-xl
               "
             >
-              Graphic Design
+              SEO Optimization
             </h3>
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
@@ -407,23 +423,23 @@ import { isDark } from '~/composables'
           <div v-if="isDark" class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-graphics-white.svg"
-                alt="Graphic Design icon"
-              />
+                :src="iconServerWhite"
+                alt="Server Management"
+              >
             </div>
           </div>
           <div v-else class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-graphics-white.svg"
-                alt="Graphic Design icon"
-              />
+                :src="iconServerWhite"
+                alt="Server Management"
+              >
             </div>
             <div class="block group-hover:hidden">
               <img
-                src="https://atom.redpixelthemes.com/assets/img/icon-graphics-black.svg"
-                alt="Graphic Design icon"
-              />
+                :src="iconServerBlack"
+                alt="Server Management"
+              >
             </div>
           </div>
           <div class="text-center">
@@ -433,12 +449,13 @@ import { isDark } from '~/composables'
                 text-lg
                 font-semibold
                 text-indigo-700
+                dark:text-indigo-500
                 uppercase
                 group-hover:text-yellow
                 lg:text-xl
               "
             >
-              Web Design
+              Server Management
             </h3>
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"

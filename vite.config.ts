@@ -7,7 +7,6 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
 
@@ -19,7 +18,7 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      reactivityTransform: true
+      reactivityTransform: true,
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -33,12 +32,15 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
-        'vue-i18n',
         'vue/macros',
         '@vueuse/head',
         '@vueuse/core',
       ],
       dts: 'src/auto-imports.d.ts',
+      dirs: [
+        'src/composables',
+      ],
+      vueTemplate: true,
     }),
 
     // https://github.com/antfu/unplugin-vue-components
@@ -55,8 +57,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Nauris Linde',
-        short_name: 'Portfolio',
+        name: process.env.VITE_APP_TITLE,
+        short_name: process.env.VITE_SHORT_NAME,
         theme_color: '#ffffff',
         icons: [
           {
@@ -77,13 +79,6 @@ export default defineConfig({
           },
         ],
       },
-    }),
-
-    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
-    VueI18n({
-      runtimeOnly: true,
-      compositionOnly: true,
-      include: [path.resolve(__dirname, 'locales/**')],
     }),
 
     // https://github.com/antfu/vite-plugin-inspect
@@ -108,5 +103,5 @@ export default defineConfig({
     exclude: [
       'vue-demi',
     ],
-  }
+  },
 })

@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import type { RouteParams } from "vue-router";
+import type { RouteParams } from 'vue-router'
 
 interface NavLink {
-  name: string;
-  params?: Partial<RouteParams>;
-  title: string;
-  icon?: string;
-  display: "all" | "guest" | "authorized";
+  name: string
+  params?: Partial<RouteParams>
+  title: string
+  icon?: string
+  display: 'all' | 'guest' | 'authorized'
 }
 
 const navLinks = computed<NavLink[]>(() => [
   {
-    name: "index",
-    title: "Home",
-    display: "all",
+    name: 'index',
+    title: 'Home',
+    display: 'all',
   },
   {
-    name: "experience",
-    title: "Experience",
-    display: "all",
+    name: 'experience',
+    title: 'Experience',
+    display: 'all',
   },
   {
-    name: "portfolio",
-    title: "Portfolio",
-    display: "all",
+    name: 'portfolio',
+    title: 'Portfolio',
+    display: 'all',
   },
   {
-    name: "contact",
-    title: "Contact",
-    display: "all",
+    name: 'contact',
+    title: 'Contact',
+    display: 'all',
   },
-]);
+])
 </script>
 
 <template>
@@ -56,8 +56,7 @@ const navLinks = computed<NavLink[]>(() => [
             text-slate-800
             dark:text-white
           "
-          >{Portfolio}</span
-        >
+        >{Portfolio}</span>
       </a>
       <ul class="hidden md:flex flex-row self-end h-12 space-x-7 text-slate-700 dark:text-slate-300">
         <li v-for="link in navLinks" :key="link.name">

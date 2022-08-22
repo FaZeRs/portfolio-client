@@ -5,22 +5,22 @@ const isScrolled = computed(() => {
   return state.userScrollPosition > 100
 })
 
-function updateScrollPosition() {
-    state.userScrollPosition = window.scrollY;
+function updateScrollPosition(): void {
+  state.userScrollPosition = window.scrollY
 }
 
-function backToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
+function backToTop(): void {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
 }
 
 onMounted(() => {
-  window.addEventListener("scroll", updateScrollPosition);
+  window.addEventListener('scroll', updateScrollPosition)
 })
 onUnmounted(() => {
-  window.removeEventListener("scroll", updateScrollPosition);
+  window.removeEventListener('scroll', updateScrollPosition)
 })
 </script>
 
