@@ -48,10 +48,16 @@ function projectImage(project: Project): string {
       Here's what I have done with the past
     </h3>
 
-    <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-3">
+    <div v-if="error">
+      Oops! Error encountered.
+    </div>
+    <div v-else-if="data" class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-3">
       <a v-for="project in data" :key="project.id" class="mx-auto transform transition-all hover:scale-105 md:mx-0 cursor-pointer" @click="openProjectModal(project)">
         <img :src="projectImage(project)" class="shadow object-cover aspect-video h-min w-full" :alt="project.title">
       </a>
+    </div>
+    <div v-else>
+      Loading...
     </div>
     <ProjectModal :show-modal="modalVisible" :project="activeProject" @close="closeProjectModal" />
   </div>
