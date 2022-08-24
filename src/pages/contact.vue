@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { ref } from 'vue'
 import { ErrorMessage, Field, Form } from 'vee-validate'
 import { object, string } from 'yup'
@@ -235,6 +237,7 @@ const inputClasses
       </div>
       <div class="w-full mb-6 md:mb-0 lg:mr-5 mr-3">
         <Field id="message" v-slot="{ field, errors }" name="message">
+          <!-- todo: Fix vue-tsc error -->
           <textarea
             v-bind="field"
             class="

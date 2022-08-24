@@ -10,6 +10,7 @@
     "preview-https": "serve dist",
     "test": "vitest",
     "test:e2e": "cypress open",
+    "cypress:install": "cypress install",
     "test:unit": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I"
@@ -36,9 +37,12 @@
     "@unocss/preset-web-fonts": "^0.45.12",
     "@unocss/reset": "^0.45.12",
     "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/test-utils": "^2.0.2",
     "critters": "^0.0.16",
     "cross-env": "^7.0.3",
+    "cypress": "^10.6.0",
     "eslint": "^8.22.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "https-localhost": "^4.7.1",
     "pnpm": "^7.9.5",
     "taze": "^0.7.6",
@@ -53,6 +57,7 @@
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-ssg": "^0.20.2",
     "vite-ssg-sitemap": "^0.3.2",
+    "vitest": "^0.22.1",
     "vue-tsc": "^0.40.1"
   }
 }
