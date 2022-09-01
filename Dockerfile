@@ -9,8 +9,8 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
 
 COPY . .
 
-ARG APP_ENV=production
-ENV NODE_ENV=${APP_ENV}
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
 ARG APP_TITLE=Portfolio
 ENV VITE_APP_TITLE=${APP_TITLE}
