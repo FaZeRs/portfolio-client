@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { RouteParams } from 'vue-router'
+import { onClickOutside } from '@vueuse/core'
 
 interface NavLink {
   name: string
@@ -31,6 +32,14 @@ const navLinks = computed<NavLink[]>(() => [
     display: 'all',
   },
 ])
+
+const mobileNav = ref(null)
+const showMenu = ref(false)
+
+function closeMobileNav() {
+  showMenu.value = false
+}
+onClickOutside(mobileNav, closeMobileNav)
 </script>
 
 <template>
@@ -80,9 +89,36 @@ const navLinks = computed<NavLink[]>(() => [
           </router-link>
         </li>
       </ul>
-      <button class="md:hidden icon-btn text-gray-400">
+      <button class="md:hidden icon-btn text-gray-800 dark:text-gray-300" @click="showMenu = !showMenu">
         <div i="carbon-menu" />
       </button>
+
+      <aside ref="mobileNav" class="p-5 transform top-0 left-0 w-64 bg-white dark:bg-gray-800 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30" :class="showMenu ? 'translate-x-0' : '-translate-x-full'">
+        <div class="close">
+          <button class="absolute top-0 right-0 mt-4 mr-4 text-gray-400 text-lg" @click="closeMobileNav">
+            <div i="carbon-close" />
+          </button>
+        </div>
+        <ul class="font-sans">
+          <li v-for="link in navLinks" :key="link.name">
+            <router-link
+              :to="{ name: link.name }"
+              class="
+                hover:text-indigo-700
+                dark:hover:text-white
+                cursor-pointer
+                font-medium
+                my-4
+                inline-block
+              "
+              active-class="dark:text-white text-indigo-700 border-b-3 border-indigo-700"
+              @click="closeMobileNav"
+            >
+              {{ link.title }}
+            </router-link>
+          </li>
+        </ul>
+      </aside>
     </div>
   </nav>
 </template>

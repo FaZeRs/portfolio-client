@@ -107,7 +107,7 @@ function openGallery(index: number): void {
                 bg-transparent
                 hover:bg-gray-200 hover:text-slate-900
                 rounded-lg
-                text-sm
+                text-lg
                 p-1.5
                 ml-auto
                 inline-flex
@@ -116,7 +116,7 @@ function openGallery(index: number): void {
               "
               @click="closeModal"
             >
-              <div i="carbon-close" class="text-lg" />
+              <div i="carbon-close" />
             </button>
           </div>
           <div
