@@ -89,11 +89,11 @@ onClickOutside(mobileNav, closeMobileNav)
           </router-link>
         </li>
       </ul>
-      <button class="md:hidden icon-btn text-gray-800 dark:text-gray-300" @click="showMenu = !showMenu">
+      <button class="md:hidden text-gray-800 dark:text-gray-300" @click="showMenu = !showMenu">
         <div i="carbon-menu" />
       </button>
 
-      <aside ref="mobileNav" class="p-5 transform top-0 left-0 w-64 bg-white dark:bg-gray-800 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30" :class="showMenu ? 'translate-x-0' : '-translate-x-full'">
+      <aside ref="mobileNav" class="p-5 transform top-0 left-0 w-64 bg-white dark:bg-gray-900 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 shadow-2xl" :class="showMenu ? 'translate-x-0' : '-translate-x-full'">
         <div class="close">
           <button class="absolute top-0 right-0 mt-4 mr-4 text-gray-400 text-lg" @click="closeMobileNav">
             <div i="carbon-close" />
