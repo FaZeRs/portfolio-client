@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { isDark } from '~/composables'
-import avatar from '~/assets/images/avatar.png'
+import avatar from '~/assets/images/avatar.jpg'
 import bgHero from '~/assets/images/bg-hero.jpg'
 import iconWebDevelopmentWhite from '~/assets/images/icon-web-development-white.svg'
 import iconWebDevelopmentBlack from '~/assets/images/icon-web-development-black.svg'
