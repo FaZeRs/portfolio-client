@@ -16,6 +16,16 @@ fetch(`${apiUrl}/experiences`)
   .then(res => res.json())
   .then(json => (data.value = json.data))
   .catch(err => (error.value = err))
+
+function dateTo(experience: Experience): string {
+  if (experience.onGoing)
+    return 'Present'
+
+  if (experience.dateTo)
+    return formatDate(experience.dateTo)
+
+  return formatDate(new Date())
+}
 </script>
 
 <template>
@@ -34,11 +44,11 @@ fetch(`${apiUrl}/experiences`)
       <div v-else-if="data">
         <span class="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-gray-500 md:block" />
 
-        <div v-for="exprience in data" :key="exprience.id" class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+        <div v-for="experience in data" :key="experience.id" class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
-            <div v-if="exprience.logo" class="flex justify-center md:justify-start">
+            <div v-if="experience.logo" class="flex justify-center md:justify-start">
               <span class="shrink-0">
-                <img :src="exprience.logo.url" class="h-12 max-w-full" alt="company logo">
+                <img :src="experience.logo.url" class="h-12 max-w-full" alt="company logo">
               </span>
               <div class="relative ml-3 hidden w-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-gray-300 dark:bg-gray-700" />
@@ -52,12 +62,12 @@ fetch(`${apiUrl}/experiences`)
               <div class="mt-1 flex">
                 <div i="carbon-caret-right" class="hidden text-indigo-700 md:block" />
                 <div class="flex-1 md:-mt-1 md:pl-8">
-                  <span class="block text-slate-500 dark:text-slate-400">{{ formatDate(exprience.dateFrom) }} - {{ formatDate(exprience.dateTo) }}</span>
-                  <span class="block pt-2 font-header text-xl uppercase text-indigo-700 dark:text-indigo-500">{{ exprience.title }}</span>
-                  <a v-if="exprience.website" :href="exprience.website" target="_blank" class="block pt-2 font-header uppercase text-slate-600 dark:text-slate-300">{{ exprience.organisation }}</a>
-                  <span v-else class="block pt-2 font-header uppercase text-slate-600 dark:text-slate-300">{{ exprience.organisation }}</span>
-                  <div v-if="exprience.description" class="pt-2">
-                    <span class="block font-body text-black dark:text-slate-300">{{ exprience.description }}</span>
+                  <span class="block text-slate-500 dark:text-slate-400">{{ formatDate(experience.dateFrom) }} - {{ dateTo(experience) }}</span>
+                  <span class="block pt-2 font-header text-xl uppercase text-indigo-700 dark:text-indigo-500">{{ experience.title }}</span>
+                  <a v-if="experience.website" :href="experience.website" target="_blank" class="block pt-2 font-header uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</a>
+                  <span v-else class="block pt-2 font-header uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</span>
+                  <div v-if="experience.description" class="pt-2">
+                    <span class="block font-body text-black dark:text-slate-300">{{ experience.description }}</span>
                   </div>
                 </div>
               </div>

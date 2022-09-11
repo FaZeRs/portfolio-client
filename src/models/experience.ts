@@ -9,4 +9,5 @@ export default interface Experience {
   description: string
   dateFrom: Date
   dateTo: Date
+  onGoing: boolean
 }
