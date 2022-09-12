@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/FaZeRs/portfolio-client/compare/v1.0.0...v1.1.0) (2022-09-12)
+
+
+### Features
+
+* created docker build and push action ([7a0edaf](https://github.com/FaZeRs/portfolio-client/commit/7a0edaf274444df086ba8c43691627d4d80a7c04))
+
 ## 1.0.0 (2022-09-11)
 
 
