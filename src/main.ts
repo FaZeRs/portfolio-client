@@ -22,7 +22,7 @@ const scrollBehavior = (to: any, from: any, savedPosition: any) => {
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
-  { routes, scrollBehavior, base: import.meta.env.BASE_URL },
+  { routes, scrollBehavior },
   (ctx) => {
     ctx.app.use(vfmPlugin)
     // install all modules under `modules/`
