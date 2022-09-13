@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/FaZeRs/portfolio-client/compare/v1.1.0...v1.1.1) (2022-09-13)
+
+
+### Bug Fixes
+
+* removed base from routing config ([9f988d9](https://github.com/FaZeRs/portfolio-client/commit/9f988d9f881373693913f1b1dca33e254127d2c1))
+* sitemap access and base url ([c61d94e](https://github.com/FaZeRs/portfolio-client/commit/c61d94e765d05bcfb6560d2acffba57e6d28aa41))
+
 ## [1.1.0](https://github.com/FaZeRs/portfolio-client/compare/v1.0.0...v1.1.0) (2022-09-12)
 
 
