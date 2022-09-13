@@ -12,7 +12,7 @@ useHead({
       content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
     },
     { property: 'og:title', content: 'Nauris Linde' },
-    { property: 'og:image', content: 'https://naurislinde.dev/avatar.png' },
+    { property: 'og:image', content: 'https://naurislinde.dev/avatar.jpg' },
     { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:creator', content: '@naurislinde' },
   ],
