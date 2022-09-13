@@ -34,3 +34,4 @@ jobs:
             LINKEDIN_URL=${{ secrets.CLIENT_LINKEDIN_URL }}
             EMAIL=${{ secrets.CLIENT_EMAIL }}
             API_URL=${{ secrets.CLIENT_API_URL }}
+            BASE_URL=${{ secrets.CLIENT_BASE_URL }}
