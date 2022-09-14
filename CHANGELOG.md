@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/FaZeRs/portfolio-client/compare/v1.1.2...v1.1.3) (2022-09-14)
+
+
+### Bug Fixes
+
+* copy .env.template to .env in test-e2e ci job ([683a908](https://github.com/FaZeRs/portfolio-client/commit/683a908064ae465e7de9207bcb7ebee5f6dfe004))
+
 ## [1.1.2](https://github.com/FaZeRs/portfolio-client/compare/v1.1.1...v1.1.2) (2022-09-13)
 
 
