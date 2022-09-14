@@ -7,6 +7,12 @@ import type Project from '~/models/project'
 
 useHead({
   title: 'Portfolio',
+  link: [
+    {
+      rel: 'canonical',
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+    },
+  ],
 })
 
 const data = ref<Project[]>([])

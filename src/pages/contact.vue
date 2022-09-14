@@ -8,6 +8,12 @@ import { removeTrailingSlash } from '~/helpers'
 
 useHead({
   title: 'Contact',
+  link: [
+    {
+      rel: 'canonical',
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+    },
+  ],
 })
 const contactEmail = import.meta.env.VITE_EMAIL
 

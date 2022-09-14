@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isDark } from '~/composables'
+import { removeTrailingSlash } from '~/helpers'
 import avatar from '~/assets/images/avatar.jpg'
 import bgHero from '~/assets/images/bg-hero.jpg'
 import iconWebDevelopmentWhite from '~/assets/images/icon-web-development-white.svg'
@@ -19,6 +20,16 @@ const githubUrl = import.meta.env.VITE_GITHUB_URL
 const facebookUrl = import.meta.env.VITE_FACEBOOK_URL
 const twitterUrl = import.meta.env.VITE_TWITTER_URL
 const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL
+
+useHead({
+  title: 'Home',
+  link: [
+    {
+      rel: 'canonical',
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+    },
+  ],
+})
 </script>
 
 <template>

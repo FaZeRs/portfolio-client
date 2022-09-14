@@ -6,6 +6,12 @@ import type Experience from '~/models/experience'
 
 useHead({
   title: 'Experience',
+  link: [
+    {
+      rel: 'canonical',
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+    },
+  ],
 })
 
 const data = ref<Experience[]>([])
