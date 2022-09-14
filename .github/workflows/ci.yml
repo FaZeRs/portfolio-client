@@ -83,6 +83,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
+      - run: cp .env.template .env
+
       - run: pnpm install
 
       - name: Cypress PNPM Patch
