@@ -246,7 +246,7 @@ useHead({
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Modern and mobile-ready website that will help you reach all of your marketing.
             </p>
           </div>
         </div>
@@ -291,7 +291,7 @@ useHead({
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              User-friendly desktop application development to boost your productivity.
             </p>
           </div>
         </div>
@@ -336,7 +336,7 @@ useHead({
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Mobile application development is a highlight that businesses are interested in at the moment and in the future.
             </p>
           </div>
         </div>
@@ -381,7 +381,7 @@ useHead({
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Designing and coding your emails so that every single subscriber can engage with them.
             </p>
           </div>
         </div>
@@ -426,7 +426,7 @@ useHead({
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Improving your site to increase its visibility when people search for products or services related to your business.
             </p>
           </div>
         </div>
@@ -471,7 +471,7 @@ useHead({
             <p
               class="text-slate-600 dark:text-slate-300 pt-4 text-sm group-hover:text-white md:text-base"
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Managing hardware and software components of servers in an effort to have the servers function as expected.
             </p>
           </div>
         </div>
