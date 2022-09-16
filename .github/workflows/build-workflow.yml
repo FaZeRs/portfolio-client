@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build_pull_request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+      - name: Install
+        run: pnpm install
+      - name: Build
+        run: pnpm build
