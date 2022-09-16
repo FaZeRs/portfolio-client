@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![CI Badge](https://github.com/FaZeRs/portfolio-client/workflows/CI/badge.svg)
+![CodeQL Badge](https://github.com/FaZeRs/portfolio-client/workflows/CodeQL/badge.svg)
 
 | Repository                                                          | Info               |
 |---------------------------------------------------------------------|--------------------|
