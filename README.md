@@ -1,14 +1,14 @@
 # Portfolio
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![CI Badge](https://github.com/FaZeRs/portfolio-client/workflows/CI/badge.svg)
+![Tests Badge](https://github.com/FaZeRs/portfolio-client/workflows/Tests/badge.svg)
 ![CodeQL Badge](https://github.com/FaZeRs/portfolio-client/workflows/CodeQL/badge.svg)
 
 | Repository                                                          | Info               |
 |---------------------------------------------------------------------|--------------------|
 | [portfolio-client](https://github.com/FaZeRs/portfolio-client)      | Frontend           |
 | [portfolio-api](https://github.com/FaZeRs/portfolio-api)            | Rest API           |
-| [portfolio-server](https://github.com/FaZeRs/portfolio-server)      | Docker Env         |
+| [portfolio-server](https://github.com/FaZeRs/portfolio-server)      | Docker Environment |
 
 ## Features
 
@@ -17,8 +17,6 @@
 - 🗂 [File based routing](./src/pages)
 
 - 📦 [Components auto importing](./src/components)
-
-- 🍍 [State Management via Pinia](https://pinia.vuejs.org/)
 
 - 📑 [Layout system](./src/layouts)
 
