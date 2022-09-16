@@ -44,7 +44,12 @@
 
 ### Development
 
-Just run and visit http://localhost:3333
+Create a `.env` file from the template `.env.template` file.
+```bash
+cp .env.template .env
+```
+
+Run and visit http://localhost:3333
 
 ```bash
 pnpm dev
