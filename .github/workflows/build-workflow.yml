@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 18.x
           cache: pnpm
+      - run: cp .env.template .env
       - name: Install
         run: pnpm install
       - name: Build
