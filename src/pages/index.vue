@@ -89,7 +89,7 @@ useHead({
                   Let's connect
                 </p>
                 <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-3xl text-yellow" />
+                  <div i="carbon-chevron-right" class="text-2xl text-yellow" />
                 </div>
               </div>
               <div
@@ -103,17 +103,17 @@ useHead({
                   text-white text-2xl
                 "
               >
-                <a :href="githubUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="githubUrl" target="_blank" class="pl-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-github" />
                 </a>
-                <a :href="facebookUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="linkedinUrl" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
+                  <div i="carbon-logo-linkedin" />
+                </a>
+                <a :href="facebookUrl" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-facebook" />
                 </a>
-                <a :href="twitterUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
+                <a :href="twitterUrl" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-twitter" />
-                </a>
-                <a :href="linkedinUrl" target="_blank" class="pl-4 transform transition-all hover:scale-125">
-                  <div i="carbon-logo-linkedin" />
                 </a>
               </div>
             </div>
