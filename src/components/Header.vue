@@ -83,7 +83,7 @@ onClickOutside(mobileNav, closeMobileNav)
               h-full
               px-2
             "
-            active-class="dark:text-white text-indigo-700 border-b-3 border-indigo-700 font-semibold"
+            active-class="dark:text-white text-indigo-700 border-b-3 border-indigo-700"
           >
             {{ link.title }}
           </router-link>
