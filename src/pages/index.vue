@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { isDark } from '~/composables'
 import { removeTrailingSlash } from '~/helpers'
-import avatar from '~/assets/images/avatar.jpg'
-import bgHero from '~/assets/images/bg-hero.jpg'
+import avatar from '~/assets/images/avatar.webp'
+import bgHero from '~/assets/images/bg-hero.webp'
 import iconWebDevelopmentWhite from '~/assets/images/icon-web-development-white.svg'
 import iconWebDevelopmentBlack from '~/assets/images/icon-web-development-black.svg'
 import iconAppDevelopmentWhite from '~/assets/images/icon-app-development-white.svg'
@@ -21,12 +21,13 @@ const facebookUrl = import.meta.env.VITE_FACEBOOK_URL
 const twitterUrl = import.meta.env.VITE_TWITTER_URL
 const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL
 
+const currentRoute = useRoute()
 useHead({
   title: 'Home',
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
     },
   ],
 })
@@ -58,7 +59,6 @@ useHead({
             <h1
               class="
                 text-center
-                font-header
                 text-4xl text-white
                 sm:text-left sm:text-5xl
                 md:text-6xl
@@ -137,7 +137,6 @@ useHead({
         <div class="w-full text-center lg:text-left">
           <h2
             class="
-              font-header
               text-4xl
               font-semibold
               uppercase
@@ -151,7 +150,6 @@ useHead({
           <h4
             class="
               pt-6
-              font-header
               text-xl
               font-medium
               sm:text-2xl
@@ -170,7 +168,6 @@ useHead({
       <h2
         class="
           text-center
-          font-header
           text-4xl
           font-semibold
           text-indigo-700
@@ -185,7 +182,6 @@ useHead({
         class="
           pt-6
           text-center
-          font-header
           text-xl
           font-medium
           sm:text-2xl

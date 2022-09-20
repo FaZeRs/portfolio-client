@@ -6,12 +6,13 @@ import { ErrorMessage, Field, Form } from 'vee-validate'
 import { object, string } from 'yup'
 import { removeTrailingSlash } from '~/helpers'
 
+const currentRoute = useRoute()
 useHead({
   title: 'Contact',
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
     },
   ],
 })
@@ -70,7 +71,6 @@ const inputClasses
     <h2
       class="
         text-center
-        font-header
         text-4xl
         font-semibold
         uppercase
@@ -85,7 +85,6 @@ const inputClasses
       class="
         pt-6
         text-center
-        font-header
         text-xl
         font-medium
         text-black
@@ -279,7 +278,6 @@ const inputClasses
           bg-indigo-500
           px-8
           py-3
-          font-header
           text-lg
           font-bold
           uppercase

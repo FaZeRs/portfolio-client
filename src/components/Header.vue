@@ -55,7 +55,7 @@ onClickOutside(mobileNav, closeMobileNav)
         mx-auto
       "
     >
-      <a href="#" class="flex items-center space-x-7">
+      <router-link to="/" class="flex items-center space-x-7">
         <span
           class="
             self-center
@@ -66,7 +66,7 @@ onClickOutside(mobileNav, closeMobileNav)
             dark:text-white
           "
         >{Portfolio}</span>
-      </a>
+      </router-link>
       <ul class="hidden md:flex flex-row self-end h-12 space-x-7 text-slate-700 dark:text-slate-300">
         <li v-for="link in navLinks" :key="link.name">
           <router-link
@@ -83,7 +83,7 @@ onClickOutside(mobileNav, closeMobileNav)
               h-full
               px-2
             "
-            active-class="dark:text-white text-indigo-700 border-b-3 border-indigo-700"
+            active-class="dark:text-white text-indigo-700 border-b-3 border-indigo-700 font-semibold"
           >
             {{ link.title }}
           </router-link>

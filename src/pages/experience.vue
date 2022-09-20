@@ -4,12 +4,13 @@ import { ref } from 'vue'
 import { formatDate, removeTrailingSlash } from '~/helpers'
 import type Experience from '~/models/experience'
 
+const currentRoute = useRoute()
 useHead({
   title: 'Experience',
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
     },
   ],
 })
@@ -36,10 +37,10 @@ function dateTo(experience: Experience): string {
 
 <template>
   <div id="work" class="container mx-auto py-16 md:py-20">
-    <h2 class="text-center font-header text-4xl font-semibold uppercase text-indigo-700 sm:text-5xl lg:text-6xl">
+    <h2 class="text-center text-4xl font-semibold uppercase text-indigo-700 sm:text-5xl lg:text-6xl">
       My experience
     </h2>
-    <h3 class="pt-6 text-center font-header text-xl font-medium text-black dark:text-slate-200 sm:text-2xl lg:text-3xl">
+    <h3 class="pt-6 text-center text-xl font-medium text-black dark:text-slate-200 sm:text-2xl lg:text-3xl">
       Here's what I did before
     </h3>
 
@@ -69,9 +70,9 @@ function dateTo(experience: Experience): string {
                 <div i="carbon-caret-right" class="hidden text-indigo-700 md:block" />
                 <div class="flex-1 md:-mt-1 md:pl-8">
                   <span class="block text-slate-500 dark:text-slate-400">{{ formatDate(experience.dateFrom) }} - {{ dateTo(experience) }}</span>
-                  <span class="block pt-2 font-header text-xl uppercase text-indigo-700 dark:text-indigo-500">{{ experience.title }}</span>
-                  <a v-if="experience.website" :href="experience.website" target="_blank" class="block pt-2 font-header uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</a>
-                  <span v-else class="block pt-2 font-header uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</span>
+                  <span class="block pt-2 text-xl uppercase text-indigo-700 dark:text-indigo-500">{{ experience.title }}</span>
+                  <a v-if="experience.website" :href="experience.website" target="_blank" class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</a>
+                  <span v-else class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</span>
                   <div v-if="experience.description" class="pt-2">
                     <span class="block font-body text-black dark:text-slate-300">{{ experience.description }}</span>
                   </div>

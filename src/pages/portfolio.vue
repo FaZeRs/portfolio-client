@@ -5,12 +5,13 @@ import ProjectModal from '~/components/ProjectModal.vue'
 import { removeTrailingSlash } from '~/helpers'
 import type Project from '~/models/project'
 
+const currentRoute = useRoute()
 useHead({
   title: 'Portfolio',
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + useRoute().path,
+      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
     },
   ],
 })
@@ -47,10 +48,10 @@ function projectImage(project: Project): string {
 
 <template>
   <div id="portfolio" class="container mx-auto py-16 md:py-20">
-    <h2 class="text-center font-header text-4xl font-semibold uppercase text-indigo-700 sm:text-5xl lg:text-6xl">
+    <h2 class="text-center text-4xl font-semibold uppercase text-indigo-700 sm:text-5xl lg:text-6xl">
       Check out my Portfolio
     </h2>
-    <h3 class="pt-6 text-center font-header text-xl font-medium text-black dark:text-slate-200 sm:text-2xl lg:text-3xl">
+    <h3 class="pt-6 text-center text-xl font-medium text-black dark:text-slate-200 sm:text-2xl lg:text-3xl">
       Here's what I have done with the past
     </h3>
 
