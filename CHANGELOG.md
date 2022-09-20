@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.5](https://github.com/FaZeRs/portfolio-client/compare/v1.1.4...v1.1.5) (2022-09-20)
+
+
+### Bug Fixes
+
+* disabled pwa typecheck ([6afd5b6](https://github.com/FaZeRs/portfolio-client/commit/6afd5b65c900ef8e359782c8a881ad7dfc3af546))
+* updated styling, images and packages ([d9d25a7](https://github.com/FaZeRs/portfolio-client/commit/d9d25a79a4166a7de5318a7dc9404d20ebec72f4))
+
 ## [1.1.4](https://github.com/FaZeRs/portfolio-client/compare/v1.1.3...v1.1.4) (2022-09-18)
 
 
