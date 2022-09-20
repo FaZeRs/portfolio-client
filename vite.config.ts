@@ -115,6 +115,9 @@ export default defineConfig(({ mode }) => {
         'vue-router',
         '@vueuse/core',
         '@vueuse/head',
+        'vee-validate',
+        'yup',
+        'vue-easy-lightbox'
       ],
       exclude: [
         'vue-demi',
