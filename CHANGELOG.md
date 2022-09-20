@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/FaZeRs/portfolio-client/compare/v1.1.3...v1.1.4) (2022-09-18)
+
+
+### Bug Fixes
+
+* updated social icons style ([fcf0461](https://github.com/FaZeRs/portfolio-client/commit/fcf046186cb806a0a40efb2e4293f8b96f6fe11c))
+
 ## [1.1.3](https://github.com/FaZeRs/portfolio-client/compare/v1.1.2...v1.1.3) (2022-09-14)
 
 
