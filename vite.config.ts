@@ -117,7 +117,7 @@ export default defineConfig(({ mode }) => {
         '@vueuse/head',
         'vee-validate',
         'yup',
-        'vue-easy-lightbox'
+        'vue-easy-lightbox',
       ],
       exclude: [
         'vue-demi',
