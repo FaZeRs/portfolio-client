@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.6](https://github.com/FaZeRs/portfolio-client/compare/v1.1.5...v1.1.6) (2022-09-20)
+
+
+### Bug Fixes
+
+* added favicon.ico ([d73c57d](https://github.com/FaZeRs/portfolio-client/commit/d73c57dac897a5ed8df3bf3777233b7f3a5e2b38))
+* header menu item style ([5ead871](https://github.com/FaZeRs/portfolio-client/commit/5ead8712b2ca692e9c7910d4fc4c518279abaf4b))
+
 ## [1.1.5](https://github.com/FaZeRs/portfolio-client/compare/v1.1.4...v1.1.5) (2022-09-20)
 
 
