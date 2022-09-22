@@ -36,7 +36,7 @@ function dateTo(experience: Experience): string {
 </script>
 
 <template>
-  <div id="work" class="container mx-auto py-16 md:py-20">
+  <div id="work" class="container mx-auto py-16 md:py-20 px-8">
     <h2 class="text-center text-4xl font-semibold uppercase text-indigo-700 sm:text-5xl lg:text-6xl">
       My experience
     </h2>

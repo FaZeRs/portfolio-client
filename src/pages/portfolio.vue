@@ -47,7 +47,7 @@ function projectImage(project: Project): string {
 </script>
 
 <template>
-  <div id="portfolio" class="container mx-auto py-16 md:py-20">
+  <div id="portfolio" class="container mx-auto py-16 md:py-20 px-8">
     <h2 class="text-center text-4xl font-semibold uppercase text-indigo-700 sm:text-5xl lg:text-6xl">
       Check out my Portfolio
     </h2>

@@ -45,7 +45,7 @@ useHead({
       />
 
       <div
-        class="container relative z-30 pt-20 pb-12 lg:pt-34 lg:pb-34 mx-auto"
+        class="container relative z-30 pt-20 pb-12 lg:pt-34 lg:pb-34 mx-auto px-8"
       >
         <div class="flex flex-col items-center justify-center lg:flex-row">
           <div class="rounded-full border-8 border-indigo-700 shadow-xl">
