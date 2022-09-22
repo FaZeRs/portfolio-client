@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/FaZeRs/portfolio-client/compare/v1.1.6...v1.2.0) (2022-09-22)
+
+
+### Features
+
+* added sentry error tracking ([0e15d97](https://github.com/FaZeRs/portfolio-client/commit/0e15d97726fd979918ce26d47b0249687f0deaae))
+
+
+### Bug Fixes
+
+* added container padding ([ec47d9c](https://github.com/FaZeRs/portfolio-client/commit/ec47d9cbc0cfc46d3462125b41bf1bac9b3d6aaf))
+
 ## [1.1.6](https://github.com/FaZeRs/portfolio-client/compare/v1.1.5...v1.1.6) (2022-09-20)
 
 
