@@ -128,5 +128,10 @@ export default defineConfig(({ mode }) => {
       // TODO: workaround until they support native ESM
       noExternal: ['workbox-window'],
     },
+
+    define: {
+      APP_VERSION: JSON.stringify(env.npm_package_version),
+      PACKAGE_NAME: JSON.stringify(env.npm_package_name),
+    },
   }
 })
