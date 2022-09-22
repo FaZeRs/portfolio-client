@@ -8,10 +8,13 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BackToTop: typeof import('./components/BackToTop.vue')['default']
+    ContactForm: typeof import('./components/ContactForm.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
+    InputField: typeof import('./components/InputField.vue')['default']
     ProjectModal: typeof import('./components/ProjectModal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TextAreaField: typeof import('./components/TextAreaField.vue')['default']
   }
 }
