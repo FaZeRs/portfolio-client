@@ -41,7 +41,7 @@
     "@sentry/tracing": "^7.13.0",
     "@sentry/vue": "^7.13.0",
     "@vueuse/core": "^9.2.0",
-    "@vueuse/head": "^0.7.12",
+    "@vueuse/head": "^0.9.8",
     "nprogress": "^0.2.0",
     "vee-validate": "^4.6.9",
     "vue": "^3.2.39",
