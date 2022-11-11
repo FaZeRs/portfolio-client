@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { toRefs } from 'vue'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { VueFinalModal } from 'vue-final-modal'
 import VueEasyLightbox from 'vue-easy-lightbox'
 
