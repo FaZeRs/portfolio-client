@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { toRefs } from 'vue'
+import { VueFinalModal } from 'vue-final-modal'
 import VueEasyLightbox from 'vue-easy-lightbox'
 
 import type Project from '~/models/project'
@@ -53,12 +54,20 @@ function openGallery(index: number): void {
   <div v-if="project">
     <VueFinalModal
       v-model="showModal"
-      classes="flex justify-center items-center"
+      classes="flex justify-center items-center outline-none overflow-x-hidden overflow-y-auto my-5"
       content-class="relative flex flex-col max-h-full mx-4 rounded"
+      :transition="{
+        'enter-active-class': 'transition duration-200 ease-in-out transform',
+        'enter-from-class': 'translate-y-full',
+        'enter-to-class': 'translate-y-0',
+        'leave-active-class': 'transition duration-200 ease-in-out transform',
+        'leave-to-class': 'translate-y-full',
+        'leave-from-class': 'translate-y-0',
+      }"
       @click-outside="closeModal"
       @cancel="closeModal"
     >
-      <div class="modal-dialog relative w-full max-w-3xl h-full md:h-auto">
+      <div class="modal-dialog modal-dialog-scrollable relative w-auto pointer-events-none">
         <div
           class="
             modal-content
@@ -74,6 +83,10 @@ function openGallery(index: number): void {
             rounded-md
             outline-none
             text-current
+            fade
+            max-w-4xl
+            h-full
+            md:h-auto
           "
         >
           <div
@@ -127,6 +140,7 @@ function openGallery(index: number): void {
             </span>
           </div>
           <div
+            v-if="galleryImages.length > 0"
             class="
               flex
               items-center
@@ -143,7 +157,6 @@ function openGallery(index: number): void {
                 w-full
                 grid-cols-3
                 gap-2
-                flex
               "
             >
               <a
@@ -161,7 +174,7 @@ function openGallery(index: number): void {
               >
                 <img
                   :src="image"
-                  class="shadow max-w-full h-48"
+                  class="shadow max-w-full h-48 mx-auto"
                   :alt="project.title"
                 >
               </a>
@@ -211,7 +224,7 @@ function openGallery(index: number): void {
                   dark:focus:text-white
                 "
               >
-                <div v-if="link.icon" :i="link.icon" class="mr-2 w-4 h-4 fill-current" />
+                <div v-show="link.icon" class="mr-2 w-4 h-4 fill-current" :class="link.icon" />
                 {{ link.title }}
               </a>
             </div>
@@ -250,6 +263,7 @@ function openGallery(index: number): void {
       :visible="galleryVisible"
       :imgs="galleryImages"
       :index="imgIndex"
+      :loop="true"
       @hide="closeGallery"
     />
   </div>
