@@ -17,8 +17,7 @@
       "vite/client",
       "vue/ref-macros",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client",
-      "vue-final-modal"
+      "vite-plugin-vue-layouts/client"
     ],
     "paths": {
       "~/*": ["src/*"]
