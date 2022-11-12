@@ -55,7 +55,7 @@ function dateTo(experience: Experience): string {
           <div class="md:w-2/5">
             <div v-if="experience.logo" class="flex justify-center md:justify-start">
               <span class="shrink-0">
-                <img :src="experience.logo.url" class="h-12 max-w-full" alt="company logo">
+                <img :src="experience.logo.url" class="h-12 max-w-full" :alt="experience.title" loading="lazy">
               </span>
               <div class="relative ml-3 hidden w-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-gray-300 dark:bg-gray-700" />

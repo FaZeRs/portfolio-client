@@ -53,6 +53,9 @@ useHead({
               :src="avatar"
               class="h-48 rounded-full sm:h-56"
               alt="Nauris Linde"
+              loading="lazy"
+              width="224"
+              height="224"
             >
           </div>
           <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
@@ -207,6 +210,9 @@ useHead({
               <img
                 :src="iconWebDevelopmentWhite"
                 alt="Web Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -215,12 +221,18 @@ useHead({
               <img
                 :src="iconWebDevelopmentWhite"
                 alt="Web Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
             <div class="block group-hover:hidden">
               <img
                 :src="iconWebDevelopmentBlack"
                 alt="Web Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -252,6 +264,9 @@ useHead({
               <img
                 :src="iconAppDevelopmentWhite"
                 alt="Application Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -260,12 +275,18 @@ useHead({
               <img
                 :src="iconAppDevelopmentWhite"
                 alt="Application Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
             <div class="block group-hover:hidden">
               <img
                 :src="iconAppDevelopmentBlack"
                 alt="Application Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -297,6 +318,9 @@ useHead({
               <img
                 :src="iconMobileWhite"
                 alt="Mobile Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -305,12 +329,18 @@ useHead({
               <img
                 :src="iconMobileWhite"
                 alt="Mobile Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
             <div class="block group-hover:hidden">
               <img
                 :src="iconMobileBlack"
                 alt="Mobile Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -342,6 +372,9 @@ useHead({
               <img
                 :src="iconEmailWhite"
                 alt="Email Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -350,12 +383,18 @@ useHead({
               <img
                 :src="iconEmailWhite"
                 alt="Email Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
             <div class="block group-hover:hidden">
               <img
                 :src="iconEmailBlack"
                 alt="Email Development"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -387,6 +426,9 @@ useHead({
               <img
                 :src="iconSeoWhite"
                 alt="SEO Optimization"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -395,12 +437,18 @@ useHead({
               <img
                 :src="iconSeoWhite"
                 alt="SEO Optimization"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
             <div class="block group-hover:hidden">
               <img
                 :src="iconSeoBlack"
                 alt="SEO Optimization"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -432,6 +480,9 @@ useHead({
               <img
                 :src="iconServerWhite"
                 alt="Server Management"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
@@ -440,12 +491,18 @@ useHead({
               <img
                 :src="iconServerWhite"
                 alt="Server Management"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
             <div class="block group-hover:hidden">
               <img
                 :src="iconServerBlack"
                 alt="Server Management"
+                loading="lazy"
+                width="150"
+                height="150"
               >
             </div>
           </div>
