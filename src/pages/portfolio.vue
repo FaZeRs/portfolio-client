@@ -78,7 +78,14 @@ function openGallery(index: number): void {
     </div>
     <div v-else-if="data" class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-3">
       <a v-for="project in data" :key="project.id" class="mx-auto transform transition-all hover:scale-105 md:mx-0 cursor-pointer" @click="openProjectModal(project)">
-        <img :src="projectImage(project)" class="shadow object-cover aspect-video h-min w-full" :alt="project.title">
+        <img
+          :src="projectImage(project)"
+          loading="lazy"
+          class="shadow object-cover aspect-video h-min w-full lazy"
+          :alt="project.title"
+          width="250"
+          height="250"
+        >
       </a>
     </div>
     <div v-else>
@@ -135,6 +142,9 @@ function openGallery(index: number): void {
                 :src="image"
                 class="shadow max-w-full h-48 mx-auto"
                 :alt="activeProject?.title"
+                loading="lazy"
+                width="200"
+                height="200"
               >
             </a>
           </div>
