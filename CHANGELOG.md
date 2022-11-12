@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/FaZeRs/portfolio-client/compare/v1.3.0...v1.4.0) (2022-11-12)
+
+
+### Features
+
+* lazy load images ([3f7bc88](https://github.com/FaZeRs/portfolio-client/commit/3f7bc88e8955a122540316c8f62c17afe2911cc3))
+
 ## [1.3.0](https://github.com/FaZeRs/portfolio-client/compare/v1.2.0...v1.3.0) (2022-11-12)
 
 
