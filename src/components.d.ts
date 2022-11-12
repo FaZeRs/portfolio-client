@@ -12,7 +12,7 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     InputField: typeof import('./components/InputField.vue')['default']
-    ProjectModal: typeof import('./components/ProjectModal.vue')['default']
+    Modal: typeof import('./components/Modal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TextAreaField: typeof import('./components/TextAreaField.vue')['default']
