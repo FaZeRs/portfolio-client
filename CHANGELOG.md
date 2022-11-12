@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/FaZeRs/portfolio-client/compare/v1.2.0...v1.3.0) (2022-11-12)
+
+
+### Features
+
+* updated project modal ([3f19fa9](https://github.com/FaZeRs/portfolio-client/commit/3f19fa9989518dd46d45f34b02e4b08787b60b2e))
+* upgraded to node 19 ([41cd8d2](https://github.com/FaZeRs/portfolio-client/commit/41cd8d23d59d1ab63a5b5014d00c7b5dadab7a69))
+
+
+### Bug Fixes
+
+* fixed styling of project modal ([331d403](https://github.com/FaZeRs/portfolio-client/commit/331d4039d4059e327fb0caac61d8870de826b573))
+* fixed tsconfig ([06e0a33](https://github.com/FaZeRs/portfolio-client/commit/06e0a33f9dd816642f31874e7f993d1900b4f939))
+* typecheck error ([60256a9](https://github.com/FaZeRs/portfolio-client/commit/60256a9b437fcd687b6b7dee436aa4c41c7e6a68))
+
 ## [1.2.0](https://github.com/FaZeRs/portfolio-client/compare/v1.1.6...v1.2.0) (2022-09-22)
 
 
