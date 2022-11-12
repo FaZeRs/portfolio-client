@@ -38,6 +38,7 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.4",
     "@sentry/tracing": "^7.19.0",
     "@sentry/vue": "^7.19.0",
     "@vueuse/core": "^9.5.0",
@@ -47,7 +48,6 @@
     "vue": "^3.2.45",
     "vue-demi": "^0.13.11",
     "vue-easy-lightbox": "^1.10.0",
-    "vue-final-modal": "^3.4.10",
     "vue-router": "^4.1.6",
     "yup": "^0.32.11"
   },

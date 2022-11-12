@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import VueEasyLightbox from 'vue-easy-lightbox'
 
-import ProjectModal from '~/components/ProjectModal.vue'
 import { removeTrailingSlash } from '~/helpers'
 import type Project from '~/models/project'
 
@@ -25,17 +25,12 @@ fetch(`${apiUrl}/projects`)
   .then(json => (data.value = json.data))
   .catch(err => (error.value = err))
 
-const modalVisible = ref(false)
+const projectModal = ref<null | { setIsOpen: (value: boolean) => null; setIgnoreEvents: (value: boolean) => null }>(null)
 const activeProject = ref<Project>()
 
 function openProjectModal(project: Project): void {
-  modalVisible.value = true
+  projectModal.value?.setIsOpen(true)
   activeProject.value = project
-}
-
-function closeProjectModal(): void {
-  modalVisible.value = false
-  activeProject.value = {} as Project
 }
 
 function projectImage(project: Project): string {
@@ -43,6 +38,29 @@ function projectImage(project: Project): string {
     return project.images[0].url
 
   return 'https://atom.redpixelthemes.com//assets/img/portfolio-apple.jpeg'
+}
+
+const galleryVisible = ref(false)
+const imgIndex = ref(0)
+const galleryImages = ref<string[]>([])
+
+watch(activeProject, (newProject) => {
+  if (!newProject || !newProject.images || newProject.images.length === 0)
+    return []
+  galleryImages.value = newProject.images.map((image) => {
+    return image.url
+  })
+})
+
+function closeGallery(): void {
+  galleryVisible.value = false
+  projectModal.value?.setIgnoreEvents(false)
+}
+
+function openGallery(index: number): void {
+  galleryVisible.value = true
+  imgIndex.value = index
+  projectModal.value?.setIgnoreEvents(true)
 }
 </script>
 
@@ -66,7 +84,157 @@ function projectImage(project: Project): string {
     <div v-else>
       Loading...
     </div>
-    <ProjectModal :show-modal="modalVisible" :project="activeProject" @close="closeProjectModal" />
+    <Modal ref="projectModal">
+      <template #title>
+        {{ activeProject?.title }}
+      </template>
+      <template #default>
+        <div
+          class="text-slate-600 dark:text-slate-300 p-6"
+        >
+          <span v-if="activeProject?.description">
+            {{ activeProject.description }}
+          </span>
+        </div>
+        <div
+          v-if="activeProject?.images && activeProject?.images.length > 0"
+          class="
+              flex
+              items-center
+              my-2
+              p-6
+              space-x-2
+              border-t
+              border-gray-200
+              dark:border-gray-600
+            "
+        >
+          <div
+            class="
+                mx-auto
+                grid
+                w-full
+                grid-cols-5
+                gap-2
+              "
+          >
+            <a
+              v-for="(image, key) in galleryImages"
+              :key="key"
+              class="
+                  mx-auto
+                  transform
+                  transition-all
+                  hover:scale-105
+                  md:mx-0
+                  cursor-pointer
+                "
+              @click="openGallery(key)"
+            >
+              <img
+                :src="image"
+                class="shadow max-w-full h-48 mx-auto"
+                :alt="activeProject?.title"
+              >
+            </a>
+          </div>
+        </div>
+        <div
+          v-if="activeProject?.links && activeProject?.links.length > 0"
+          class="
+              flex
+              items-center
+              p-6
+              my-2
+              space-x-2
+              border-t
+              border-gray-200
+              dark:border-gray-600
+            "
+        >
+          <div class="inline-flex">
+            <a
+              v-for="link in activeProject.links"
+              :key="link.id"
+              :href="link.url"
+              target="_blank"
+              class="
+                  inline-flex
+                  items-center
+                  py-2
+                  px-4
+                  mr-2
+                  text-sm
+                  font-medium
+                  text-gray-900
+                  bg-white
+                  rounded-l-lg
+                  rounded-r-lg
+                  border
+                  border-gray-200
+                  hover:bg-gray-100
+                  hover:text-blue-700
+                  focus:z-10
+                  focus:ring-2
+                  focus:ring-blue-700
+                  focus:text-blue-700
+                  dark:bg-gray-700
+                  dark:border-gray-600
+                  dark:text-white
+                  dark:hover:text-white
+                  dark:hover:bg-gray-600
+                  dark:focus:ring-blue-500
+                  dark:focus:text-white
+                "
+            >
+              <div v-show="link.icon" class="mr-2 w-4 h-4 fill-current" :class="link.icon" />
+              {{ link.title }}
+            </a>
+          </div>
+        </div>
+        <div
+          v-if="activeProject?.tags && activeProject?.tags.length > 0"
+          class="
+              flex
+              items-center
+              p-6
+              mt-2
+              space-x-2
+              rounded-b
+              border-t
+              border-gray-200
+              dark:border-gray-600
+            "
+        >
+          <span
+            v-for="tag in activeProject.tags"
+            :key="tag.id"
+            class="
+                bg-blue-100
+                text-blue-800
+                text-sm
+                font-medium
+                mr-2
+                px-2.5
+                py-0.5
+                rounded
+                dark:bg-blue-200
+                dark:text-blue-800
+                transform
+                transition-all
+                hover:scale-105
+                cursor-pointer
+              "
+          >{{ tag.title }}</span>
+        </div>
+      </template>
+    </Modal>
+    <VueEasyLightbox
+      :visible="galleryVisible"
+      :imgs="galleryImages"
+      :index="imgIndex"
+      @hide="closeGallery"
+    />
   </div>
 </template>
 
