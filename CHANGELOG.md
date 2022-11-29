@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/FaZeRs/portfolio-client/compare/v1.4.0...v1.5.0) (2022-11-29)
+
+
+### Features
+
+* improved sentry error tracking ([bd94544](https://github.com/FaZeRs/portfolio-client/commit/bd94544298b3eab9dbb58f640565eef7415d2307))
+
+
+### Bug Fixes
+
+* fixed sentry configuration in development ([221cc65](https://github.com/FaZeRs/portfolio-client/commit/221cc651c3443a57f94d9ba57cf00f493a47da0f))
+
 ## [1.4.0](https://github.com/FaZeRs/portfolio-client/compare/v1.3.0...v1.4.0) (2022-11-12)
 
 
