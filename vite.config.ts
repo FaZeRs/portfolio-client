@@ -9,10 +9,14 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
+import sentryVitePlugin from '@sentry/vite-plugin'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
+    build: {
+      sourcemap: true,
+    },
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -86,6 +90,19 @@ export default defineConfig(({ mode }) => {
       // https://github.com/antfu/vite-plugin-inspect
       // Visit http://localhost:3333/__inspect/ to see the inspector
       Inspect(),
+
+      // https://github.com/getsentry/sentry-javascript-bundler-plugins/tree/main/packages/vite-plugin
+      sentryVitePlugin({
+        org: env.SENTRY_ORG,
+        project: env.SENTRY_PROJECT,
+
+        // Specify the directory containing build artifacts
+        include: './dist',
+
+        // Auth tokens can be obtained from https://sentry.io/settings/account/api/auth-tokens/
+        // and needs the `project:releases` and `org:read` scopes
+        authToken: env.SENTRY_AUTH_TOKEN,
+      }),
     ],
 
     // https://github.com/vitest-dev/vitest
