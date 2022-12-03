@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import { type UserModule } from '~/types'
 
 // https://github.com/antfu/vite-plugin-pwa#automatic-reload-when-new-content-available

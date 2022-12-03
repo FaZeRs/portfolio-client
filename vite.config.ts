@@ -104,7 +104,7 @@ export default defineConfig(({ mode }) => {
         authToken: env.SENTRY_AUTH_TOKEN,
 
         telemetry: false,
-        dryRun: true,
+        dryRun: !env.SENTRY_ORG || !env.SENTRY_PROJECT || !env.SENTRY_AUTH_TOKEN,
       }),
     ],
 
