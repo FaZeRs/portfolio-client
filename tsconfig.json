@@ -14,14 +14,22 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
+      "vitest",
       "vite/client",
       "vue/ref-macros",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client",
+      "vite-plugin-pwa/client"
     ],
     "paths": {
       "~/*": ["src/*"]
     }
+  },
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue-macros/volar/define-model",
+      "@vue-macros/volar/define-slots"
+    ]
   },
   "exclude": ["dist", "node_modules", "cypress"]
 }
