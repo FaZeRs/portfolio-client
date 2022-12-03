@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/FaZeRs/portfolio-client/compare/v1.5.0...v1.5.1) (2022-12-03)
+
+
+### Bug Fixes
+
+* lint errors ([3057666](https://github.com/FaZeRs/portfolio-client/commit/3057666eeaef5d313ead0c0eafb64f32f7a660b9))
+* sentry config variable check ([960b11a](https://github.com/FaZeRs/portfolio-client/commit/960b11a74419769beb7b1353cd191a24b7c582ab))
+
 ## [1.5.0](https://github.com/FaZeRs/portfolio-client/compare/v1.4.0...v1.5.0) (2022-11-29)
 
 
