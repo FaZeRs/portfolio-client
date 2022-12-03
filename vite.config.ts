@@ -10,6 +10,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
 import sentryVitePlugin from '@sentry/vite-plugin'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -23,8 +24,14 @@ export default defineConfig(({ mode }) => {
       },
     },
     plugins: [
-      Vue({
-        reactivityTransform: true,
+
+      VueMacros({
+        plugins: {
+          vue: Vue({
+            include: [/\.vue$/, /\.md$/],
+            reactivityTransform: true,
+          }),
+        },
       }),
 
       // https://github.com/hannoeru/vite-plugin-pages
@@ -138,6 +145,7 @@ export default defineConfig(({ mode }) => {
         'vee-validate',
         'yup',
         'vue-easy-lightbox',
+        '@headlessui/vue',
       ],
       exclude: [
         'vue-demi',
