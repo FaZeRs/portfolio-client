@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/FaZeRs/portfolio-client/compare/v1.5.1...v1.6.0) (2022-12-03)
+
+
+### Features
+
+* added vue macros ([c0cfe49](https://github.com/FaZeRs/portfolio-client/commit/c0cfe49003920538dc3e118a4a3f411fbcd86cb7))
+
 ## [1.5.1](https://github.com/FaZeRs/portfolio-client/compare/v1.5.0...v1.5.1) (2022-12-03)
 
 
