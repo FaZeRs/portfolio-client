@@ -68,7 +68,7 @@
     "@vue/test-utils": "^2.2.5",
     "critters": "^0.0.16",
     "cross-env": "^7.0.3",
-    "cypress": "^11.2.0",
+    "cypress": "^12.1.0",
     "eslint": "^8.29.0",
     "eslint-plugin-cypress": "^2.12.1",
     "https-localhost": "^4.7.1",
