@@ -1861,8 +1861,8 @@ packages:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
 
-  /@iconify/utils/2.0.9:
-    resolution: {integrity: sha512-ropNqaeamoxZvXxvaTJXrI0MrqdWdDVIs/mW7/sEQbNi0aXYUGL2iuLs1da3QR163gyG63kiyTsqw2oQYamw3Q==}
+  /@iconify/utils/2.0.10:
+    resolution: {integrity: sha512-DvVLHl2w5ooo8pfUsvcMy+Rh1wkjeTOWWMicUDlLQMBE0baP8l/vwzQwmD7E0s04ixaDsv1I2JiYhKzQgB0GQw==}
     dependencies:
       '@antfu/install-pkg': 0.1.1
       '@antfu/utils': 0.7.2
@@ -2589,7 +2589,7 @@ packages:
   /@unocss/preset-icons/0.48.1:
     resolution: {integrity: sha512-VB5pfKuWpvi+fO5vJgTlvldmRkw7kPxYOn+EIcoOOLyPE5iSaOnS+K/XXxJchj8Dx1q74V7V1ny6f9Lfq3NZZQ==}
     dependencies:
-      '@iconify/utils': 2.0.9
+      '@iconify/utils': 2.0.10
       '@unocss/core': 0.48.1
       ohmyfetch: 0.4.21
     transitivePeerDependencies:
