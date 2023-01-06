@@ -121,7 +121,10 @@ function openGallery(index: number): void {
                 mx-auto
                 grid
                 w-full
-                grid-cols-5
+                grid-cols-2
+                md:grid-cols-3
+                lg:grid-cols-4
+                xl:grid-cols-5
                 gap-2
               "
           >
@@ -206,6 +209,7 @@ function openGallery(index: number): void {
           v-if="activeProject?.tags && activeProject?.tags.length > 0"
           class="
               flex
+              flex-row
               items-center
               p-6
               mt-2
@@ -214,6 +218,7 @@ function openGallery(index: number): void {
               border-t
               border-gray-200
               dark:border-gray-600
+              overflow-auto
             "
         >
           <span
