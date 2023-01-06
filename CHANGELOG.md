@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.0](https://github.com/FaZeRs/portfolio-client/compare/v1.6.0...v1.7.0) (2023-01-06)
+
+
+### Features
+
+* vite 4 ([78535ef](https://github.com/FaZeRs/portfolio-client/commit/78535ef4d5cc81c8127cce7ce798c36dabb53452))
+
+
+### Bug Fixes
+
+* project modal responsiveness ([329615c](https://github.com/FaZeRs/portfolio-client/commit/329615c76a3a35af7a47175f6cc2f2da41f94b01))
+* sonarqube warnings ([f10dccd](https://github.com/FaZeRs/portfolio-client/commit/f10dccddba16ffc99855322b033cf9b51c4af9b9))
+
 ## [1.6.0](https://github.com/FaZeRs/portfolio-client/compare/v1.5.1...v1.6.0) (2022-12-03)
 
 
