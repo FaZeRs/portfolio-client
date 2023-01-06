@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import VueEasyLightbox from 'vue-easy-lightbox'
+import { sanitizeUrl } from '@braintree/sanitize-url'
 
-import { removeTrailingSlash } from '~/helpers'
 import type Project from '~/models/project'
 
 const currentRoute = useRoute()
@@ -11,7 +11,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
+      href: sanitizeUrl(import.meta.env.VITE_BASE_URL + currentRoute.path),
     },
   ],
 })
@@ -19,8 +19,8 @@ useHead({
 const data = ref<Project[]>([])
 const error = ref(null)
 
-const apiUrl = removeTrailingSlash(import.meta.env.VITE_API_URL)
-fetch(`${apiUrl}/projects`)
+const apiUrl = import.meta.env.VITE_API_URL
+fetch(sanitizeUrl(`${apiUrl}/projects`))
   .then(res => res.json())
   .then(json => (data.value = json.data))
   .catch(err => (error.value = err))
@@ -121,7 +121,10 @@ function openGallery(index: number): void {
                 mx-auto
                 grid
                 w-full
-                grid-cols-5
+                grid-cols-2
+                md:grid-cols-3
+                lg:grid-cols-4
+                xl:grid-cols-5
                 gap-2
               "
           >
@@ -166,7 +169,7 @@ function openGallery(index: number): void {
             <a
               v-for="link in activeProject.links"
               :key="link.id"
-              :href="link.url"
+              :href="sanitizeUrl(link.url)"
               target="_blank"
               class="
                   inline-flex
@@ -206,6 +209,7 @@ function openGallery(index: number): void {
           v-if="activeProject?.tags && activeProject?.tags.length > 0"
           class="
               flex
+              flex-row
               items-center
               p-6
               mt-2
@@ -214,6 +218,7 @@ function openGallery(index: number): void {
               border-t
               border-gray-200
               dark:border-gray-600
+              overflow-auto
             "
         >
           <span

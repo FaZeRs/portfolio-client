@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { removeTrailingSlash } from '~/helpers'
+import { sanitizeUrl } from '@braintree/sanitize-url'
 
 const currentRoute = useRoute()
 useHead({
@@ -7,7 +7,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
+      href: sanitizeUrl(import.meta.env.VITE_BASE_URL + currentRoute.path),
     },
   ],
 })
@@ -46,7 +46,7 @@ const contactEmail = import.meta.env.VITE_EMAIL
     <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
       <p class="font-body text-slate-600 dark:text-slate-400">
         Email me at
-        <a class="italic" :href="`mailto:${contactEmail}`">{{
+        <a class="italic" :href="sanitizeUrl(`mailto:${contactEmail}`)">{{
           contactEmail
         }}</a>
         or message me here:

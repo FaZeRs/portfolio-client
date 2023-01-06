@@ -2,8 +2,7 @@
 import { ref } from 'vue'
 import { useForm } from 'vee-validate'
 import { object, string } from 'yup'
-
-import { removeTrailingSlash } from '~/helpers'
+import { sanitizeUrl } from '@braintree/sanitize-url'
 
 const schema = object({
   name: string().required(),
@@ -15,12 +14,12 @@ const { handleSubmit, isSubmitting } = useForm({
   validationSchema: schema,
 })
 
-const apiUrl = removeTrailingSlash(import.meta.env.VITE_API_URL)
+const apiUrl = import.meta.env.VITE_API_URL
 const formSuccess = ref(false)
 const formError = ref(false)
 
 const onSubmit = handleSubmit((values, { resetForm }) => {
-  fetch(`${apiUrl}/mail/contact`, {
+  fetch(sanitizeUrl(`${apiUrl}/mail/contact`), {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

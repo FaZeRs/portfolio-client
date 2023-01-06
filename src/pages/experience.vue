@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { sanitizeUrl } from '@braintree/sanitize-url'
 
-import { formatDate, removeTrailingSlash } from '~/helpers'
+import { formatDate } from '~/helpers'
 import type Experience from '~/models/experience'
 
 const currentRoute = useRoute()
@@ -10,7 +11,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
+      href: sanitizeUrl(import.meta.env.VITE_BASE_URL + currentRoute.path),
     },
   ],
 })
@@ -18,8 +19,8 @@ useHead({
 const data = ref<Experience[]>([])
 const error = ref(null)
 
-const apiUrl = removeTrailingSlash(import.meta.env.VITE_API_URL)
-fetch(`${apiUrl}/experiences`)
+const apiUrl = import.meta.env.VITE_API_URL
+fetch(sanitizeUrl(`${apiUrl}/experiences`))
   .then(res => res.json())
   .then(json => (data.value = json.data))
   .catch(err => (error.value = err))
@@ -71,7 +72,7 @@ function dateTo(experience: Experience): string {
                 <div class="flex-1 md:-mt-1 md:pl-8">
                   <span class="block text-slate-500 dark:text-slate-400">{{ formatDate(experience.dateFrom) }} - {{ dateTo(experience) }}</span>
                   <span class="block pt-2 text-xl uppercase text-indigo-700 dark:text-indigo-500">{{ experience.title }}</span>
-                  <a v-if="experience.website" :href="experience.website" target="_blank" class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</a>
+                  <a v-if="experience.website" :href="sanitizeUrl(experience.website)" target="_blank" class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</a>
                   <span v-else class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</span>
                   <div v-if="experience.description" class="pt-2">
                     <span class="block font-body text-black dark:text-slate-300">{{ experience.description }}</span>
