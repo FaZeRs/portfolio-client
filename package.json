@@ -39,6 +39,7 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@braintree/sanitize-url": "^6.0.2",
     "@headlessui/vue": "^1.7.7",
     "@vueuse/core": "^9.10.0",
     "@vueuse/head": "^1.0.22",

@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { sanitizeUrl } from '@braintree/sanitize-url'
 import { isDark } from '~/composables'
-import { removeTrailingSlash } from '~/helpers'
 import avatar from '~/assets/images/avatar.webp'
 import bgHero from '~/assets/images/bg-hero.webp'
 import iconWebDevelopmentWhite from '~/assets/images/icon-web-development-white.svg'
@@ -27,7 +27,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: removeTrailingSlash(import.meta.env.VITE_BASE_URL) + currentRoute.path,
+      href: sanitizeUrl(import.meta.env.VITE_BASE_URL + currentRoute.path),
     },
   ],
 })
@@ -106,16 +106,16 @@ useHead({
                   text-white text-2xl
                 "
               >
-                <a :href="githubUrl" target="_blank" class="pl-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
+                <a :href="sanitizeUrl(githubUrl)" target="_blank" class="pl-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-github" />
                 </a>
-                <a :href="linkedinUrl" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
+                <a :href="sanitizeUrl(linkedinUrl)" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-linkedin" />
                 </a>
-                <a :href="facebookUrl" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
+                <a :href="sanitizeUrl(facebookUrl)" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-facebook" />
                 </a>
-                <a :href="twitterUrl" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
+                <a :href="sanitizeUrl(twitterUrl)" target="_blank" class="pl-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow">
                   <div i="carbon-logo-twitter" />
                 </a>
               </div>

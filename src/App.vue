@@ -6,6 +6,7 @@ import { isDark, preferredDark } from '~/composables'
 
 useHead({
   title: 'Nauris Linde',
+  titleTemplate: title => `${title} | Nauris Linde`,
   meta: [
     { name: 'description', content: 'Nauris Linde\'s Portfolio' },
     {
