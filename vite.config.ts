@@ -9,7 +9,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
-import sentryVitePlugin from '@sentry/vite-plugin'
+import { sentryVitePlugin } from '@sentry/vite-plugin'
 import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig(({ mode }) => {
