@@ -66,7 +66,7 @@
     "@unocss/reset": "^0.48.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/coverage-c8": "^0.27.2",
-    "@vue-macros/volar": "^0.5.15",
+    "@vue-macros/volar": "^0.8.0",
     "@vue/test-utils": "^2.2.7",
     "critters": "^0.0.16",
     "cross-env": "^7.0.3",
