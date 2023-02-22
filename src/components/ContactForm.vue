@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useForm } from 'vee-validate'
 import { object, string } from 'yup'
 import { sanitizeUrl } from '@braintree/sanitize-url'
