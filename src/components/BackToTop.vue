@@ -29,6 +29,7 @@ onUnmounted(() => {
   <transition name="fade">
     <div
       v-show="isScrolled"
+      id="back-to-top"
       class="
         transition
         duration-500

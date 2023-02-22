@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { sanitizeUrl } from '@braintree/sanitize-url'
 
 import { formatDate } from '~/helpers'
@@ -17,22 +16,37 @@ useHead({
 })
 
 const data = ref<Experience[]>([])
-const error = ref(null)
+const error = ref<Error | null | unknown>(null)
 
 const apiUrl = import.meta.env.VITE_API_URL
-fetch(sanitizeUrl(`${apiUrl}/experiences`))
-  .then(res => res.json())
-  .then(json => (data.value = json.data))
-  .catch(err => (error.value = err))
 
-function dateTo(experience: Experience): string {
+async function getExperiences(): Promise<void> {
+  try {
+    const res = await fetch(sanitizeUrl(`${apiUrl}/experiences`))
+    const json = await res.json()
+    data.value = json.data
+  }
+  catch (err) {
+    error.value = err
+  }
+}
+
+onMounted(() => {
+  getExperiences()
+})
+
+function dateTo(experience: Experience): string | null {
   if (experience.onGoing)
     return 'Present'
 
-  if (experience.dateTo)
-    return formatDate(experience.dateTo)
+  if (!experience.dateTo)
+    return formatDate(new Date())
 
-  return formatDate(new Date())
+  const date = experience.dateTo
+  if (date instanceof Date)
+    return formatDate(date)
+
+  return formatDate(new Date(date))
 }
 </script>
 

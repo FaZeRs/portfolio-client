@@ -8,11 +8,11 @@ import { toggleDark } from '~/composables'
       <div i-carbon-campsite />
     </router-link>
 
-    <button class="icon-btn mx-2 !outline-none" title="Toggle dark mode" @click="toggleDark()">
+    <button id="dark-mode" class="icon-btn mx-2 !outline-none" title="Toggle dark mode" @click="toggleDark()">
       <div i="carbon-sun dark:carbon-moon" />
     </button>
 
-    <a class="icon-btn mx-2" href="https://github.com/fazers/portfolio-client" target="_blank" title="GitHub">
+    <a id="github-repo" class="icon-btn mx-2" href="https://github.com/fazers/portfolio-client" target="_blank" title="GitHub">
       <div i-carbon-logo-github />
     </a>
   </nav>
