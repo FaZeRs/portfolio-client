@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import VueEasyLightbox from 'vue-easy-lightbox'
 import { sanitizeUrl } from '@braintree/sanitize-url'
 
 import type Project from '~/models/project'
+
+const VueEasyLightbox = defineAsyncComponent(() => import('vue-easy-lightbox'))
 
 const currentRoute = useRoute()
 useHead({
@@ -17,13 +17,24 @@ useHead({
 })
 
 const data = ref<Project[]>([])
-const error = ref(null)
+const error = ref<Error | null>(null)
 
 const apiUrl = import.meta.env.VITE_API_URL
-fetch(sanitizeUrl(`${apiUrl}/projects`))
-  .then(res => res.json())
-  .then(json => (data.value = json.data))
-  .catch(err => (error.value = err))
+
+async function getProjects(): Promise<void> {
+  try {
+    const res = await fetch(sanitizeUrl(`${apiUrl}/projects`))
+    const json = await res.json()
+    data.value = json.data
+  }
+  catch (err) {
+    error.value = err
+  }
+}
+
+onMounted(() => {
+  getProjects()
+})
 
 const projectModal = ref<null | { setIsOpen: (value: boolean) => null; setIgnoreEvents: (value: boolean) => null }>(null)
 const activeProject = ref<Project>()
@@ -42,14 +53,17 @@ function projectImage(project: Project): string {
 
 const galleryVisible = ref(false)
 const imgIndex = ref(0)
-const galleryImages = ref<string[]>([])
 
-watch(activeProject, (newProject) => {
-  if (!newProject || !newProject.images || newProject.images.length === 0)
+const galleryImages = computed(() => {
+  if (!activeProject.value || !activeProject.value.images || activeProject.value.images.length === 0)
     return []
-  galleryImages.value = newProject.images.map((image) => {
-    return image.url
-  })
+
+  return activeProject.value.images.map(image => image.url)
+})
+
+watch(activeProject, () => {
+  galleryVisible.value = false
+  imgIndex.value = 0
 })
 
 function closeGallery(): void {
@@ -148,6 +162,7 @@ function openGallery(index: number): void {
                 loading="lazy"
                 width="200"
                 height="200"
+                data-cy="project-image"
               >
             </a>
           </div>
@@ -244,12 +259,14 @@ function openGallery(index: number): void {
         </div>
       </template>
     </Modal>
-    <VueEasyLightbox
-      :visible="galleryVisible"
-      :imgs="galleryImages"
-      :index="imgIndex"
-      @hide="closeGallery"
-    />
+    <teleport to="body">
+      <VueEasyLightbox
+        :visible="galleryVisible"
+        :imgs="galleryImages"
+        :index="imgIndex"
+        @hide="closeGallery"
+      />
+    </teleport>
   </div>
 </template>
 
