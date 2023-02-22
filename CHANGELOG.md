@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/FaZeRs/portfolio-client/compare/v1.7.0...v1.8.0) (2023-02-22)
+
+
+### Features
+
+* lazy load vue easy lightbox and refactor code ([6950a8c](https://github.com/FaZeRs/portfolio-client/commit/6950a8caac4a3547c287039a9cfd033689698d9d))
+* moved services inside separate component and optimized ([80c9926](https://github.com/FaZeRs/portfolio-client/commit/80c99262cc79057bd553b425490bcd801d5810d3))
+
+
+### Bug Fixes
+
+* disabled contact form submitted test ([08600b6](https://github.com/FaZeRs/portfolio-client/commit/08600b61979f1674e6d86708ddd83a9c961fe029))
+
 ## [1.7.0](https://github.com/FaZeRs/portfolio-client/compare/v1.6.0...v1.7.0) (2023-01-06)
 
 
