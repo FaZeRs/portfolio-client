@@ -16,7 +16,7 @@ useHead({
 })
 
 const data = ref<Experience[]>([])
-const error = ref<Error | null>(null)
+const error = ref<Error | null | unknown>(null)
 
 const apiUrl = import.meta.env.VITE_API_URL
 
