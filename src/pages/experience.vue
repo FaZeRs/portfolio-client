@@ -35,6 +35,17 @@ onMounted(() => {
   getExperiences()
 })
 
+function dateFrom(experience: Experience): string | null {
+  if (!experience.dateFrom)
+    return formatDate(new Date())
+
+  const date = experience.dateFrom
+  if (date instanceof Date)
+    return formatDate(date)
+
+  return formatDate(new Date(date))
+}
+
 function dateTo(experience: Experience): string | null {
   if (experience.onGoing)
     return 'Present'
@@ -84,7 +95,7 @@ function dateTo(experience: Experience): string | null {
               <div class="mt-1 flex">
                 <div i="carbon-caret-right" class="hidden text-indigo-700 md:block" />
                 <div class="flex-1 md:-mt-1 md:pl-8">
-                  <span class="block text-slate-500 dark:text-slate-400">{{ formatDate(experience.dateFrom) }} - {{ dateTo(experience) }}</span>
+                  <span class="block text-slate-500 dark:text-slate-400">{{ dateFrom(experience) }} - {{ dateTo(experience) }}</span>
                   <span class="block pt-2 text-xl uppercase text-indigo-700 dark:text-indigo-500">{{ experience.title }}</span>
                   <a v-if="experience.website" :href="sanitizeUrl(experience.website)" target="_blank" class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</a>
                   <span v-else class="block pt-2 uppercase text-slate-600 dark:text-slate-300">{{ experience.organisation }}</span>
