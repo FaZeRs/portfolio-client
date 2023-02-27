@@ -65,7 +65,7 @@
     "@unocss/preset-web-fonts": "^0.50.0",
     "@unocss/reset": "^0.50.0",
     "@vitejs/plugin-vue": "^4.0.0",
-    "@vitest/coverage-c8": "^0.28.5",
+    "@vitest/coverage-c8": "^0.29.1",
     "@vue-macros/volar": "^0.8.3",
     "@vue/test-utils": "^2.3.0",
     "critters": "^0.0.16",
