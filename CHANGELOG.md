@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.1](https://github.com/FaZeRs/portfolio-client/compare/v1.9.0...v1.9.1) (2023-03-06)
+
+
+### Bug Fixes
+
+* styling in portfolio project description ([4eb6d39](https://github.com/FaZeRs/portfolio-client/commit/4eb6d393b75d67731d3b112ef18d1fa8027956c0))
+* updated index page about me section ([d37d63a](https://github.com/FaZeRs/portfolio-client/commit/d37d63ae26d2f574670393a28dfba3234f6f2179))
+
 ## [1.9.0](https://github.com/FaZeRs/portfolio-client/compare/v1.8.0...v1.9.0) (2023-03-06)
 
 
