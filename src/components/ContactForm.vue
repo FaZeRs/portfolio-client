@@ -35,7 +35,7 @@ const onSubmit = handleSubmit((values, { resetForm }) => {
         formError.value = true
       }
     })
-    .catch((response) => {
+    .catch(() => {
       formError.value = true
     })
 })
