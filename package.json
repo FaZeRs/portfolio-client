@@ -1,7 +1,7 @@
 {
   "name": "portfolio-client",
   "type": "module",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "private": true,
   "packageManager": "pnpm@7.25.1",
   "description": "Portfolio website based on Vite and UnoCSS",
