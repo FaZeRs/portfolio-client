@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/FaZeRs/portfolio-client/compare/v1.8.0...v1.9.0) (2023-03-06)
+
+
+### Features
+
+* added analytics script ([dcbdf22](https://github.com/FaZeRs/portfolio-client/commit/dcbdf22dde71988c659983c61677ae4c99efe3f2))
+
+
+### Bug Fixes
+
+* experience date from ([a24e429](https://github.com/FaZeRs/portfolio-client/commit/a24e429f001b010bd029aad67d441ed19d10c5d8))
+
 ## [1.8.0](https://github.com/FaZeRs/portfolio-client/compare/v1.7.0...v1.8.0) (2023-02-22)
 
 
