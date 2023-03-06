@@ -113,7 +113,7 @@ function openGallery(index: number): void {
         <div
           class="text-slate-600 dark:text-slate-300 p-6"
         >
-          <span v-if="activeProject?.description">
+          <span v-if="activeProject?.description" class="description">
             {{ activeProject.description }}
           </span>
         </div>
